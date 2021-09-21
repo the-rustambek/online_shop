@@ -27,6 +27,7 @@
     "express-fileupload": "^1.2.1",
     "joi": "^17.4.2",
     "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.7",
     "morgan": "^1.10.0"
   }
 }
