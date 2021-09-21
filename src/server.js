@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 8000;
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const path = require('path');
-const routes = require('./routes/routes')
+const routes = require('./routes/routes');
 
 const databaseMiddleware  = require("./middlewares/databaseMiddleware");
 
