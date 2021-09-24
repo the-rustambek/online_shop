@@ -1,5 +1,8 @@
+const homeRoute = require("./homeRoute")
+const userRoute = require("./userRoute")
+
+
 module.exports = app =>{
-    app.get("/",(req,res) =>{
-        res.render("index")
-    })
+    app.use(homeRoute.path,homeRoute.router);
+    app.use(userRoute.path,userRoute.router);
 }
