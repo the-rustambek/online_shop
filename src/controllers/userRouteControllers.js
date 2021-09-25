@@ -10,4 +10,4 @@ module.exports = class userRouteCountroller{
         // res.redirect("/")
         console.log(req.body)
     }
-}
+};
