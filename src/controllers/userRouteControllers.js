@@ -18,10 +18,11 @@ module.exports = class userRouteCountroller{
                  password: await generateHash(password),
             });
 
-await sendEmail(email, "Iltimos pochtangizni tasdiqlang", "Pochtangizni tasdiqlash uchun link", `<a href="http://localhost:8000/users/verify/${user._id}"/>Tasdiqlash</a>`);
+await sendEmail(email, "Iltimos pochtangizni tasdiqlang", "Pochtangizni tasdiqlash uchun link",
+ `<a href="http://localhost:8000/users/verify/${user._id}">Tasdiqlash</a>`);
 
-res.redirect("/login");
-         console.log(user);
+res.redirect("/users/login");
+         console.log(`http://localhost:8000/users/verify/${user._id}`);
         }
         catch(error){
             console.log(error);

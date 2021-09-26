@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 module.exports.email = async function email(to, subject,mail_body, mail_html){
-    const transport = await nodemailer.createTransport({
+    const transporter =  nodemailer.createTransport({
         host: "smtp.yandex.ru",
         port: 465,
         secure:true,
@@ -10,8 +10,8 @@ module.exports.email = async function email(to, subject,mail_body, mail_html){
             pass: "931487733RMS",
         },
     });
-return await trnasport.sendEmail({
-    from: '"Bizning kompaniya" <foo@example.com>',
+return await transporter.sendEmail({
+    from: '"Bizning kompaniya" <rustambek01uz>',
     to, 
     subject,
     text: mail_body,
