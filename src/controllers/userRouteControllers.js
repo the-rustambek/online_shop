@@ -16,10 +16,7 @@ module.exports = class userRouteCountroller{
             const user = await users.create({
                 name, email,
                  password: await generateHash(password),
-            })
-
-
-
+            });
     console.log(user);
         }
         catch(error){
@@ -30,7 +27,7 @@ module.exports = class userRouteCountroller{
         }
 
 
-        res.redirect("/users/login")
+        res.redirect("/users/login");
         
     }
 };
