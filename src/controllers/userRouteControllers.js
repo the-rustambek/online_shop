@@ -24,8 +24,8 @@ module.exports = class userRouteCountroller{
             res.render("reg",{
                 error: error+"",
             });
-        }
-    res.redirect("/users/login");
+        };
+        res.redirect("/users/login");
         
     }
 };
