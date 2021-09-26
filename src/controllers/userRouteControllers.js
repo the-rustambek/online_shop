@@ -1,5 +1,6 @@
-const users =  require("../models/userModel")
-
+const users =  require("../models/userModel");
+const {signUpValidation} = require("../modules/validations");
+const {generateHash}=require("../modules/bcrypt");
 
 module.exports = class userRouteCountroller{
     static async userRegisterGetController(req,res){
@@ -11,7 +12,15 @@ module.exports = class userRouteCountroller{
    
     static async userSignUpPostController(req,res){
         try{
+    const {name, email, password} = await signUpValidation(req.body);
+            const user = await users.create({
+                name, email,
+                 password: await generateHash(password),
+            })
 
+
+
+    console.log(user);
         }
         catch(error){
             console.log(error);
