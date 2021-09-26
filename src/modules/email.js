@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 module.exports.email = async function email(to, subject,mail_body, mail_html){
-    const transporter =  nodemailer.createTransport({
+    const transporter = await nodemailer.createTransport({
         host: "smtp.yandex.ru",
         port: 465,
         secure:true,

@@ -20,9 +20,9 @@ module.exports = class userRouteCountroller{
 
 await sendEmail(email, "Iltimos pochtangizni tasdiqlang", "Pochtangizni tasdiqlash uchun link",
  `<a href="http://localhost:8000/users/verify/${user._id}">Tasdiqlash</a>`);
-
+ console.log(`http://localhost:8000/users/verify/${user._id}`);
 res.redirect("/users/login");
-         console.log(`http://localhost:8000/users/verify/${user._id}`);
+         
         }
         catch(error){
             console.log(error);
@@ -34,3 +34,5 @@ res.redirect("/users/login");
         
     }
 };
+
+
