@@ -5,8 +5,6 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const path = require('path');
 const routes = require('./routes/routes');
-
-// const databaseMiddleware  = require("./middlewares/databaseMiddleware");
 const mongo = require("./modules/mongoose")
 
 
@@ -20,9 +18,9 @@ async function server(mode){
     }));
     app.use(cookieParser());
     app.use(morgan("dev"));
-    app.use(express.static(path.join(__dirname,"src","public")));
+    app.use("/public", express.static(path.join(__dirname, "public")));
     // app.use(databaseMiddleware);
-await mongo()
+    await mongo()
     if(mode == "DEV"){
         app.use(morgan("dev"));
     }

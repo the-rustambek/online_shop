@@ -1,9 +1,10 @@
-const {userRegisterGetController,userLoginGetController,userLoginPostController} =  require("../controllers/userRouteControllers")
+const {userRegisterGetController,userLoginGetController,userSignUpPostController} =  require("../controllers/userRouteControllers")
 const router =  require("express").Router();
 
 router.get("/reg",userRegisterGetController);
 router.get("/login",userLoginGetController);
-router.post("/login",userLoginPostController);
+router.post("/reg",userSignUpPostController);
+
 
 module.exports = {
     path: "/users",
