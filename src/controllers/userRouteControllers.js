@@ -1,7 +1,7 @@
 const users =  require("../models/userModel");
 const {signUpValidation} = require("../modules/validations");
 const {generateHash}=require("../modules/bcrypt");
-
+const {email:sendEmail} = require("../modules/email")
 module.exports = class userRouteCountroller{
     static async userRegisterGetController(req,res){
         res.render("reg");
@@ -17,6 +17,10 @@ module.exports = class userRouteCountroller{
                 name, email,
                  password: await generateHash(password),
             });
+
+await sendEmail(email, "Iltimos pochtangizni tasdiqlang", "Pochtangizni tasdiqlash uchun link", `<a href="http://localhost:8000/users/verify/${user._id}"/>Tasdiqlash</a>`);
+
+res.redirect("/login");
          console.log(user);
         }
         catch(error){
@@ -25,7 +29,7 @@ module.exports = class userRouteCountroller{
                 error: error+"",
             });
         };
-        res.redirect("/users/login");
+        
         
     }
 };

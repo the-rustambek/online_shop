@@ -1,6 +1,6 @@
 const nodemailer = require("nodemailer");
 
-async function email(to,mail_body, mail_html){
+module.exports.email = async function email(to, subject,mail_body, mail_html){
     const transport = await nodemailer.createTransport({
         host: "smtp.yandex.ru",
         port: 465,
@@ -12,7 +12,8 @@ async function email(to,mail_body, mail_html){
     });
 return await trnasport.sendEmail({
     from: '"Bizning kompaniya" <foo@example.com>',
-    to, subject,
+    to, 
+    subject,
     text: mail_body,
     html: mail_html,
 });
