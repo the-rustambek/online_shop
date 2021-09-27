@@ -5,6 +5,7 @@ router.get("/reg",userRegisterGetController);
 router.get("/login",userLoginGetController);
 router.get("/verify/:id",userVerifyGetController);
 router.post("/reg",userSignUpPostController);
+// router.post("/login",userLoginPostController);
 
 
 module.exports = {

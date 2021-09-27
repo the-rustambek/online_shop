@@ -6,4 +6,4 @@ module.exports.generateHash = async function generateHash(data){
 
 module.exports.compareHash = async function compareHash(data, hash){
     return await bcrypt.compare(data, hash);
-}
+};

@@ -17,7 +17,7 @@ async function server(mode){
         extended:true,
     }));
     app.use(cookieParser());
-    app.use(morgan("dev"));
+    
     app.use("/public", express.static(path.join(__dirname, "public")));
     // app.use(databaseMiddleware);
     await mongo()
