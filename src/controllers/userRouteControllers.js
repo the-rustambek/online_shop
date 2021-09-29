@@ -26,10 +26,10 @@ module.exports = class userRouteCountroller {
 			// 	email,
 			// 	"Iltimos pochtangizni tasdiqlang",
 			// 	'Pochtangizni tasdiqlash uchun link',
-			// 	`<a href="http://localhost:8080/users/verify/${user._id}"/>Tasdiqlash</a>`
+			// 	`<a href="http://localhost:8000/users/verify/${user._id}">Tasdiqlash</a>`
 			// );
 
-			console.log(`http://10.10.129.48:8080/users/verify/${user._id}`);
+			// console.log(`http://10.10.129.48:8000/users/verify/${user._id}`);
 
 			res.redirect("/users/login");
 		} catch (error) {
