@@ -23,5 +23,6 @@ module.exports = class validations{
 				.error(new Error("Password is invalid")),
 		}).validateAsync(data);
 	}
+	
 
 };

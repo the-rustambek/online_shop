@@ -26,12 +26,13 @@ module.exports = class userRouteCountroller {
 			// 	email,
 			// 	"Iltimos pochtangizni tasdiqlang",
 			// 	'Pochtangizni tasdiqlash uchun link',
-			// 	`<a href="http://localhost:8000/users/verify/${user._id}">Tasdiqlash</a>`
+			// 	`<a href="http://localhost:8000/users/verify/${user._id}"/>Tasdiqlash</a>`
 			// );
 
-			// console.log(`http://10.10.129.48:8000/users/verify/${user._id}`);
+			console.log(`http://localhost:8000/users/verify/${user._id}`);
 
-			res.redirect("/users/login");
+			res.redirect("/users/login/");
+			// res.redirect("/login");
 		} catch (error) {
 			console.log(error);
 			res.render("reg", {
@@ -39,7 +40,7 @@ module.exports = class userRouteCountroller {
 			});
 		}
 	}
-static async userVerifyGetController(req,res){
+	static async userVerifyGetController(req,res){
 	try{
 		const id = req.params.id;
 		if(!id) throw new Error("Verification kalit xato");
@@ -72,6 +73,15 @@ res.cookie("token",await createToken({
 		res.render("login",{
 			error: error + "",
 		});
+	}
+}
+
+static async userLoginPostController(req, res) {
+	try{
+const {email,password} =loginValidation(req.body);
+	}
+	catch(error){
+
 	}
 }
 
