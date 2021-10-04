@@ -31,7 +31,7 @@ module.exports = class userRouteCountroller {
 
 			console.log(`http://localhost:8000/users/verify/${user._id}`);
 
-			res.redirect("/users/login/");
+			res.redirect("/users/login");
 			// res.redirect("/login");
 		} catch (error) {
 			console.log(error);

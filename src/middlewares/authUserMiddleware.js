@@ -14,8 +14,11 @@ module.exports = async function authUserMiddleware(req,res,next){
         }
         const user =  await users.findOne({
             _id: data.id,
-        })
-        res.user= user;
+        });
+
+        console.log(user);
+        req.user= user;
+        
         next()
     } catch (error) {
         next()
